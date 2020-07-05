@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" type="image/png" sizes="16x16" href="images/logo16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="images/logo32.png" />
+		<link rel="manifest" href="manifest.json" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta
+			name="description"
+			content="Thejaswi P"
+		/>
+		<meta
+			property="og:description"
+			content="Thejaswi P"
+		/>
+		<meta property="og:image" content="images/card.png" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Thejaswi P" />
+		<meta property="og:title" content="Thejaswi P" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="" />
+		<meta name="theme-color" content="#002844" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:description"
+			content="Thejaswi P"
+		/>
+		<meta name="twitter:domain" content="https://hackcamp.tech/" />
+		<meta name="twitter:image" content="images/card.png" />
+		<meta name="twitter:site" content="@PrakashThejaswi" />
+		<meta name="twitter:title" content="Thejaswi P />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="theme-color" content="#002844" />
+		<meta name="application-name" content="Thejaswi P" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta
+			name="apple-mobile-web-app-status-bar-style"
+			content="black-translucent"
+		/>
+		<meta name="apple-mobile-web-app-title" content="Thejaswi P" />
+		<meta name="theme-color" content="#e42d42" />
+		<!--link rel="apple-touch-icon" sizes="48x48" href="images/logo48.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="images/logo72.png" />
+		<link rel="apple-touch-icon" sizes="96x96" href="images/logo96.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="images/logo144.png" />
+		<link rel="apple-touch-icon" sizes="192x192" href="images/logo192.png" />
+		<link rel="apple-touch-icon" sizes="256x256" href="images/logo256.png" />
+		<link rel="apple-touch-icon" sizes="384x384" href="images/logo384.png" />
+		<link rel="apple-touch-icon" sizes="512x512" href="images/logo512.png" -->
+		<title>Thejaswi P</title>
+		<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+	</head>
+
+	<body>
+		<div class="centered">
+			<section id="header">
+				<div>
+					<img class="img-circle" style="width: 180px;" src="images/thejaswi.jpeg" alt="Thejaswi P picture" />
+					<h2 class="anim">Thejaswi P</h2>
+					<h4 class="anim">Content & Social media manager @ Hack Club APAC</h4>
+					<br />
+
+					<div style="width:50%;margin:0 auto;">
+						<a
+							class="anim"
+							href="https://github.com/Thejaswi-P"
+							target="_blank"
+							>
+							 <img src="images/github.svg" class="anim" style="width:40px;"
+							/></a>
+							<a
+								class="anim"
+								href="https://twitter.com/PrakashThejaswi"
+								target="_blank"
+								style="margin-left:5%"
+									><img src="images/twitter.svg" class="anim" style="width:40px;"
+								/></a>
+								<a
+									class="anim"
+									href="https://www.instagram.com/thejaswi_prakash/"
+									target="_blank"
+									style="margin-left:5%"
+									><img src="images/instagram.svg" class="anim" style="width:40px;"
+								/></a>
+							</div>
+				
+			</section>
+			
+	
+			<section id="contact">
+				<p class="anim">
+					<a href="mailto:thejaswi@gmail.com">Email</a>
+				</p>
+			</section>
+			
+		</div>
+		<script>
+			let animate = () => {
+				document.querySelectorAll('.anim, .banner').forEach(e => {
+					if (
+						e.offsetTop - window.innerHeight / 1.2 <
+						(window.scrollY || window.pageYOffset)
+					) {
+						e.classList.add('animate')
+					}
+				})
+			}
+			let faqreveal = e => {
+				e.nextElementSibling.classList.toggle('reveal')
+			}
+			let OneSignal = window.OneSignal || []
+			OneSignal.push(() =>
+				OneSignal.init({ appId: 'bb6ebcbf-3a50-46c7-a6a6-01c052d3321f' })
+			)
+			animate()
+			window.onscroll = animate
+			window.onresize = animate
+			document.querySelectorAll('#faq h3').forEach(e => {
+				e.addEventListener('click', () => {
+					faqreveal(e)
+				})
+			})
+			var slideIndex = 1
+			showSlides(slideIndex)
+
+			function plusSlides(n) {
+				showSlides((slideIndex += n))
+			}
+
+			function currentSlide(n) {
+				showSlides((slideIndex = n))
+			}
+
+			function showSlides(n) {
+				var i
+				var slides = document.getElementsByClassName('mySlides')
+				var dots = document.getElementsByClassName('dot')
+				if (n > slides.length) {
+					slideIndex = 1
+				}
+				if (n < 1) {
+					slideIndex = slides.length
+				}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = 'none'
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(' active', '')
+				}
+				slides[slideIndex - 1].style.display = 'block'
+				dots[slideIndex - 1].className += ' active'
+			}
+		</script>
+	</body>
+</html>
